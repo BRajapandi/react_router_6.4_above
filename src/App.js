@@ -17,13 +17,19 @@ import { AuthProvider } from "./Components/auth";
 import Profile from "./Components/Profile";
 import Login from "./Components/Login";
 import ValidateUser from "./ValidateUser";
+import ErrorComponent from "./Components/ErrorComponent";
 const LazyAbout = React.lazy(() => import("./Components/about"));
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
-        <Route index loader={dataLoader} element={<Home />} />
+        <Route
+          index
+          loader={dataLoader}
+          errorElement={<ErrorComponent />}
+          element={<Home />}
+        />
         <Route path="contact" element={<Contact />} />
         <Route
           path="about"

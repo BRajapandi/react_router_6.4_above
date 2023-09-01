@@ -16,8 +16,28 @@ function Home() {
 }
 export default Home;
 
+//we can able to access the params also if there is need
+{
+  /*
+export const dataLoader = async ({params}) => {
+
+  const {id}=params;
+  const data = await fetch("https://random.dog/woof.jso");
+
+  if (!data.ok) {
+    throw new Error("Image not found");
+  }
+  const dog = await data.json();
+  return dog.url;
+};
+*/
+}
 export const dataLoader = async () => {
-  const data = await fetch("https://random.dog/woof.json");
+  const data = await fetch("https://random.dog/woof.jso");
+
+  if (!data.ok) {
+    throw new Error("Image not found");
+  }
   const dog = await data.json();
   return dog.url;
 };
