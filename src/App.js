@@ -26,7 +26,7 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route
           index
-          loader={dataLoader}
+          // loader={dataLoader}
           errorElement={<ErrorComponent />}
           element={<Home />}
         />
